@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'firstapp arctic8 ';
+  x= false
+  title = 'firstapp ARCTIC 8 ';
+  msg=""
+  nb = 6
+  ngOnChanges(){
+    console.log('t');
+    
+  }
+  methodA(){
+    return 4
+  }
+  methodB(){
+    this.msg="This is a new text"
+  }
 }
