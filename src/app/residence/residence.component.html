@@ -1,6 +1,23 @@
-<p>residence works!</p>
-<ul class="list-group">
-    <li class="list-group-item" *ngFor="let residence of residencesList" >
-        {{ residence.name }}
-    </li>
-</ul>
+<div class="container">
+    <h1>Residence List</h1>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let residence of residencesList" >
+            {{ residence.name }}
+            <a [routerLink]="['/residence/details/',residence.id]">Details</a>
+        </li>
+    </ul><br>
+    <select name="residence" id="residence" [(ngModel)]="selectedResidence" >
+        <option *ngFor="let r of residencesList" [value]="r.id"> {{r.name}} </option>
+    </select>
+    <button class="btn btn-primary" (click)="displaySelectedAppartements()" >Display Appartements</button>
+    <p><b>Selected Residence : </b> {{ selectedResidence}} </p>
+    <div>
+        <div *ngFor="let a of selectedAppartements" >
+            <p> <b>Terrasse : </b> {{ a.terrasse }}</p> 
+            <p> <b>Surface : </b> {{ a.surface }}</p> 
+            <button (click)="buyAppartement(a.id)" [disabled]="!a.status" class="btn btn-success" >Buy</button>
+            <hr>
+        </div>
+    </div>
+ 
+</div>

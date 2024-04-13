@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Residence } from '../core/models/residence';
 import { Appartement } from '../core/models/appartement';
+import { Residence } from '../core/models/residence';
 
 @Component({
-  selector: 'app-residence',
-  templateUrl: './residence.component.html',
-  styleUrls: ['./residence.component.css']
+  selector: 'app-appartement',
+  templateUrl: './appartement.component.html',
+  styleUrls: ['./appartement.component.css']
 })
-export class ResidenceComponent implements OnInit {
+export class AppartementComponent implements OnInit {
 
   searchSurcace!: number
   selectedResidence!: number
@@ -64,4 +64,5 @@ export class ResidenceComponent implements OnInit {
       }
     }
   }
+
 }
