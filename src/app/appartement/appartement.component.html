@@ -1,5 +1,6 @@
 <div class="container">
     <h1>Appartements List</h1>
+    <a routerLink="/appartement/add">Add Appartement</a><br>
     <label for="search">Search Appartement By Surface : </label>
     <input type="number" id="search" [(ngModel)]="searchSurcace" >
     <div *ngFor="let a of appartementsList" >

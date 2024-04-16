@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Add Appartement</h1>
+    <form [formGroup]="addAppartementForm" >
+        <div class="row mb-3">
+          <label for="inputCategory3" class="col-sm-2 col-form-label">Category</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" formControlName="category" id="inputCategory3">
+            <div class="alert alert-danger m-2" 
+            *ngIf="category!.touched && category!.errors?.['required']" >Category is required.</div>
+            <div class="alert alert-danger m-2" 
+            *ngIf="category!.touched && category!.errors?.['minlength']" >Category must have at least 3 characters.</div>
+            <div class="alert alert-danger m-2" 
+            *ngIf="category!.touched && category!.errors?.['pattern']" >Category must contain only letters.</div>
+        </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputSurface3" class="col-sm-2 col-form-label">Surface</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" formControlName="surface" id="inputSurface3">
+            <div class="alert alert-danger m-2" *ngIf="surface!.touched && surface!.errors?.['required']" >Surface is required.</div>
+            <div class="alert alert-danger m-2" *ngIf="surface!.touched && surface!.errors?.['max']" >Surface max 2.</div>
+          </div>
+        </div>
+        <button [disabled]="addAppartementForm.invalid" (click)="addAppartement()" type="submit" class="btn btn-primary">Add</button>
+      </form>
+</div>
