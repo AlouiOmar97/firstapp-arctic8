@@ -5,7 +5,8 @@ import { Residence } from '../core/models/residence';
 @Component({
   selector: 'app-appartement',
   templateUrl: './appartement.component.html',
-  styleUrls: ['./appartement.component.css']
+  styleUrls: ['./appartement.component.css'],
+  providers: []
 })
 export class AppartementComponent implements OnInit {
 

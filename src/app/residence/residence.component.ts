@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Residence } from '../core/models/residence';
 import { Appartement } from '../core/models/appartement';
+import { ResidenceService } from '../services/residence.service';
 
 @Component({
   selector: 'app-residence',
@@ -14,10 +15,10 @@ export class ResidenceComponent implements OnInit {
   selectedAppartements!: Appartement[]
   residencesList!: Residence[]
   appartementsList!: Appartement[]
-  constructor() { }
+  constructor(private residenceService: ResidenceService) { }
  
   ngOnInit(): void {
-    this.residencesList=[ 
+    /*this.residencesList=[ 
 
       {id: 1, name: "Residence 1", address: "Address 1", image:"image 1"}, 
   
@@ -25,7 +26,11 @@ export class ResidenceComponent implements OnInit {
   
       {id: 3, name: "Residence 3", address: "Address 3", image:"image 3"} 
   
-    ] 
+    ] */
+
+    this.residenceService.getAllResidences().subscribe((data)=>{
+      this.residencesList= data
+    })
   
     this.appartementsList= 
     [ 

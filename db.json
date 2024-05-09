@@ -1,0 +1,9 @@
+{
+    "residence": [ 
+
+    {"id": 1, "name": "Residence 1 json server", "address": "Address 1", "image":"image 1"}, 
+    {"id": 2, "name": "Residence 2", "address": "Address 2", "image":"image 2"}, 
+    {"id": 3, "name": "Residence 3", "address": "Address 3", "image":"image 3"} 
+
+  ] 
+}
