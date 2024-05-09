@@ -1,14 +1,17 @@
 <div class="container">
-    <h1>Appartements List</h1>
-    <a routerLink="/appartement/add">Add Appartement</a><br>
-    <label for="search">Search Appartement By Surface : </label>
-    <input type="number" id="search" [(ngModel)]="searchSurcace" >
-    <div *ngFor="let a of appartementsList" >
-        <div *ngIf="a.surface <= searchSurcace" >
-            <p> <b>Terrasse : </b> {{ a.terrasse }}</p> 
-            <p> <b>Surface : </b> {{ a.surface }}</p> 
-            <button (click)="buyAppartement(a.id)" [disabled]="!a.status" class="btn btn-success" >Buy</button>
-            <hr>
-        </div>
+    <h1>Appartement List</h1>
+    <a routerLink="/appartement/add">Add Appartement</a>
+    <div class="row">
+      <app-appartement-card class="col-3 m-1" *ngFor="let a of appartementList" [appartement]="a" (deleteC)="deleteAppartement($event)"  ></app-appartement-card>
     </div>
+</div>
+<app-appartement-card style="display: none;" #appart ></app-appartement-card>
+<div class="container">
+  {{ appart.childText }}
+  <button (click)="appart.childMethod()" class="btn btn-primary">Child Method</button>
+</div>
+
+<div class="container">
+  {{ parentText }}
+  <button (click)="parentMethod()" class="btn btn-success">Parent Method</button>
 </div>

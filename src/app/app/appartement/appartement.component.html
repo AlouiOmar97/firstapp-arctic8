@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>Appartement List</h1>
+    <a routerLink="/appartement/add">Add Appartement</a>
+    <div class="row">
+      <app-appartement-card class="col-3 m-1" *ngFor="let a of appartementList" (deleteEvent)="deleteAppartement($event)"  [appartement]="a"></app-appartement-card>
+    </div>
+</div>
+<app-appartement-card #appart style="display: none;"></app-appartement-card>
+<p>{{ appart.childText }}</p>
+<p> {{ appart.childMethod() }} </p>
+<p> {{ parentText }} </p>
+<button (click)="appart.childMethod2()" class="btn btn-primary" >Method from child</button>
+<button (click)="parentMethod()" class="btn btn-success" >Method from parent</button>

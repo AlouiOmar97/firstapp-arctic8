@@ -13,7 +13,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ResidenceDetailsComponent } from './residence-details/residence-details.component';
 import { AnnonceModule } from './annonce/annonce.module';
 import { AddAppartementComponent } from './add-appartement/add-appartement.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
+import { AppartementDetailsComponent } from './appartement-details/appartement-details.component';
+import { UpdateAppartementComponent } from './update-appartement/update-appartement.component';
+import { AppartementCardComponent } from './appartement-card/appartement-card.component';
+import { VoitureComponent } from './voiture/voiture.component';
+import { VoitureDetailsComponent } from './voiture-details/voiture-details.component';
+import { AddVoitureComponent } from './add-voiture/add-voiture.component';
+import { UpdateVoitureComponent } from './update-voiture/update-voiture.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +32,14 @@ import { HttpClientModule } from "@angular/common/http";
     HomeComponent,
     NotFoundComponent,
     ResidenceDetailsComponent,
-    AddAppartementComponent
+    AddAppartementComponent,
+    AppartementDetailsComponent,
+    UpdateAppartementComponent,
+    AppartementCardComponent,
+    VoitureComponent,
+    VoitureDetailsComponent,
+    AddVoitureComponent,
+    UpdateVoitureComponent,
   ],
   imports: [
     BrowserModule,
